@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 400px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var img = document.getElementById("img");
+            var btn1 = document.getElementById("btn1")
+            var index  = 0;
+            var timer;
+            var btn = document.getElementById("btn")
+            var src_list = ["../Image/1%20(1).png",
+                "../Image/1%20(3).png",
+                "../Image/1%20(4).png",
+                "../Image/1%20(5).png",
+                "../Image/1%20(1).jpg",
+                "../Image/1%20(3).jpg",
+                "../Image/1%20(4).jpg",
+                "../Image/1%20(5).jpg"]
+            btn.onclick = function(){
+                clearInterval(timer);
+                timer = setInterval(function () {
+
+                    img.src = src_list[index];
+                    index++;
+                    if (index >= src_list.length){
+                        index = 0;
+                    }
+                },500)
+
+                btn1.onclick = function () {
+                    clearInterval(timer);
+                }
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<button id="btn">自动切换</button>
+<button id="btn1">停止切换</button>
+<div>
+    <img src="../Image/1%20(1).png" alt="" id="img">
+</div>
+
+</body>
+</html>
